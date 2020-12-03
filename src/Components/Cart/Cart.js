@@ -1,4 +1,6 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+import Shop from '../Shop/Shop';
 import './Cart.css';
 
 const Cart = (props) => {
@@ -12,6 +14,8 @@ const Cart = (props) => {
     }
     else if (totalPrice > 15) {
         shipping = 4.99;
+    }else if(totalPrice >0){
+        shipping = 12.9;
     }
 
     const tax = Math.round(totalPrice / 10).toFixed(2);
@@ -25,6 +29,8 @@ const Cart = (props) => {
             <p>Shipping: {shipping}</p>
             <p>Tax + VAT:{tax}</p>
             <p>Total Price: {grandTotal}</p>
+            <br></br>
+            <Link to="/review"><button className="main-button">Review order</button></Link>
         </div>
     );
 };
