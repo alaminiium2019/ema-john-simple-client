@@ -11,6 +11,8 @@ import NotFound from './Components/NotFound/NotFound';
 import Review from './Components/Review/Review';
 import Inventory from './Components/inventory/Inventory';
 import ProductDetails from './Components/ProductDetails/ProductDetails';
+import Login from './Components/Login/Login';
+import Shipment from './Components/Shipment/Shipment';
 
 function App() {
 
@@ -28,11 +30,17 @@ function App() {
           <Route path="/manage">
             <Inventory></Inventory>
           </Route>
-          <Route exact path="/">
-            <Shop></Shop>
+          <Route path="/login">
+            <Login></Login>
+          </Route>
+          <Route path="/shipment">
+            <Shipment></Shipment>
           </Route>
           <Route path="/product/:productKey">
             <ProductDetails></ProductDetails>
+          </Route>
+          <Route exact path="/">
+            <Shop></Shop>
           </Route>
           <Route path="*">
             <NotFound></NotFound>
